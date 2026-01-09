@@ -15,26 +15,26 @@
     "preview": {
       "environment": "provision",
       "configure": {
-        "redirectUris": ["${buildEnv.VERCEL_URL}/callback"],
-        "corsOrigins": ["${buildEnv.VERCEL_URL}"]
+        "redirectUris": ["https://${buildEnv.VERCEL_URL}/callback"],
+        "corsOrigins": ["https://${buildEnv.VERCEL_URL}"]
       },
       "localEnvVars": {
         "WORKOS_CLIENT_ID": "${authEnv.WORKOS_CLIENT_ID}",
         "WORKOS_API_KEY": "${authEnv.WORKOS_API_KEY}",
-        "NEXT_PUBLIC_WORKOS_REDIRECT_URI": "${buildEnv.VERCEL_URL}/callback"
+        "NEXT_PUBLIC_WORKOS_REDIRECT_URI": "https://${buildEnv.VERCEL_URL}/callback"
       }
     },
     "prod": {
       "environment": "provision",
       "environmentType": "production",
       "configure": {
-        "redirectUris": ["${buildEnv.VERCEL_URL}/callback"],
-        "corsOrigins": ["${buildEnv.VERCEL_URL}"]
+        "redirectUris": ["https://${buildEnv.VERCEL_URL}/callback"],
+        "corsOrigins": ["https://${buildEnv.VERCEL_URL}"]
       },
       "localEnvVars": {
         "WORKOS_CLIENT_ID": "${authEnv.WORKOS_CLIENT_ID}",
         "WORKOS_API_KEY": "${authEnv.WORKOS_API_KEY}",
-        "NEXT_PUBLIC_WORKOS_REDIRECT_URI": "${buildEnv.VERCEL_URL}/callback"
+        "NEXT_PUBLIC_WORKOS_REDIRECT_URI": "https://${buildEnv.VERCEL_URL}/callback"
       }
     }
   }
