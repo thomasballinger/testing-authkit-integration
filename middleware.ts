@@ -1,3 +1,4 @@
+import './app/credential.js';
 import { authkitMiddleware } from '@workos-inc/authkit-nextjs';
 
 export default authkitMiddleware({
