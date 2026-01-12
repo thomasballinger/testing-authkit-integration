@@ -9,6 +9,10 @@ export default authkitMiddleware({
   },
   redirectUri: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}/callback` : undefined,
 });
+console.log(
+  'in middleware redirectUri is',
+  process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}/callback` : undefined,
+);
 
 export const config = {
   matcher: [
