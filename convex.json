@@ -1,7 +1,6 @@
 {
   "authKit": {
     "dev": {
-      "environment": "provision",
       "configure": {
         "redirectUris": ["http://localhost:3000/callback"],
         "corsOrigins": ["http://localhost:3000"]
@@ -13,28 +12,20 @@
       }
     },
     "preview": {
-      "environment": "provision",
       "configure": {
         "redirectUris": ["https://${buildEnv.VERCEL_URL}/callback"],
         "corsOrigins": ["https://${buildEnv.VERCEL_URL}"]
-      },
-      "localEnvVars": {
-        "WORKOS_CLIENT_ID": "${authEnv.WORKOS_CLIENT_ID}",
-        "WORKOS_API_KEY": "${authEnv.WORKOS_API_KEY}",
-        "NEXT_PUBLIC_WORKOS_REDIRECT_URI": "https://${buildEnv.VERCEL_URL}/callback"
       }
     },
     "prod": {
-      "environment": "provision",
+      "environment": {
+        "WORKOS_CLIENT_ID": "${buildEnv.WORKOS_CLIENT_ID}",
+        "WORKOS_API_KEY": "${buildEnv.WORKOS_API_KEY}"
+      },
       "environmentType": "production",
       "configure": {
         "redirectUris": ["https://${buildEnv.VERCEL_URL}/callback"],
         "corsOrigins": ["https://${buildEnv.VERCEL_URL}"]
-      },
-      "localEnvVars": {
-        "WORKOS_CLIENT_ID": "${authEnv.WORKOS_CLIENT_ID}",
-        "WORKOS_API_KEY": "${authEnv.WORKOS_API_KEY}",
-        "NEXT_PUBLIC_WORKOS_REDIRECT_URI": "https://${buildEnv.VERCEL_URL}/callback"
       }
     }
   }
