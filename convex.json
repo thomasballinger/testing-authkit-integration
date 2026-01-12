@@ -13,7 +13,7 @@
     },
     "preview": {
       "configure": {
-        "redirectUris": ["https://${buildEnv.VERCEL_URL}/callback/"],
+        "redirectUris": ["https://${buildEnv.VERCEL_URL}/callback"],
         "corsOrigins": ["https://${buildEnv.VERCEL_URL}"]
       }
     },
