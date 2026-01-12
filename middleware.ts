@@ -7,6 +7,7 @@ export default authkitMiddleware({
     enabled: true,
     unauthenticatedPaths: ['/', '/sign-in', '/sign-up'],
   },
+  redirectUri: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}/callback` : undefined,
 });
 
 export const config = {
