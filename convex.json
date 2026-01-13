@@ -20,7 +20,7 @@
     "prod": {
       "environmentType": "production",
       "configure": {
-        "redirectUris": ["https://${authEnv.VERCEL_URL}/callback"],
+        "redirectUris": ["https://${buildEnv.VERCEL_URL}/callback"],
         "corsOrigins": ["https://${buildEnv.VERCEL_URL}"]
       }
     }
