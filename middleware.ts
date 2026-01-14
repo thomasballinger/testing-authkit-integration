@@ -7,7 +7,12 @@ export default authkitMiddleware({
     enabled: true,
     unauthenticatedPaths: ['/', '/sign-in', '/sign-up'],
   },
-  redirectUri: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}/callback` : undefined,
+  redirectUri:
+    process.env.VERCEL_ENV === 'preview'
+      ? `https://${process.env.VERCEL_BRANCH_URL}/callback`
+      : process.env.VERCEL_ENV === 'production'
+        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/callback`
+        : undefined,
 });
 console.log(
   'in middleware redirectUri is',
