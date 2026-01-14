@@ -5,6 +5,7 @@
         "redirectUris": [
           "http://localhost:3000/callback"
         ],
+        "appHomepageUrl": "https://localhost:3000",
         "corsOrigins": [
           "http://localhost:3000"
         ]
@@ -18,10 +19,11 @@
     "preview": {
       "configure": {
         "redirectUris": [
-          "https://${buildEnv.VERCEL_URL}/callback"
+          "https://${buildEnv.VERCEL_BRANCH_URL}/callback"
         ],
+        "appHomepageUrl": "https://${buildEnv.VERCEL_PROJECT_PRODUCTION_URL}",
         "corsOrigins": [
-          "https://${buildEnv.VERCEL_URL}"
+          "https://${buildEnv.VERCEL_BRANCH_URL}"
         ]
       }
     },
@@ -29,10 +31,11 @@
       "environmentType": "production",
       "configure": {
         "redirectUris": [
-          "https://${buildEnv.VERCEL_URL}/callback"
+          "https://${buildEnv.VERCEL_PROJECT_PRODUCTION_URL}/callback"
         ],
+        "appHomepageUrl": "https://${buildEnv.VERCEL_PROJECT_PRODUCTION_URL}",
         "corsOrigins": [
-          "https://${buildEnv.VERCEL_URL}"
+          "https://${buildEnv.VERCEL_PROJECT_PRODUCTION_URL}"
         ]
       }
     }
